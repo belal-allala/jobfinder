@@ -1,5 +1,10 @@
-<div class="container mt-4">
-  <h2 class="mb-4">Mes Favoris</h2>
+<div class="app-page">
+  <header class="mb-4 mb-md-5">
+    <h1 class="page-header-title">Vos offres enregistrées</h1>
+    <p class="page-header-subtitle">
+      Retrouvez en un coup d’œil toutes les opportunités que vous avez mises de côté pour candidater au bon moment.
+    </p>
+  </header>
 
   <div *ngIf="loading$ | async" class="text-center my-5">
     <div class="spinner-border text-primary" role="status">
@@ -8,31 +13,43 @@
   </div>
 
   <ng-container *ngIf="favorites$ | async as favorites">
-    <div *ngIf="favorites.length === 0 && !(loading$ | async)" class="alert alert-info">
+    <div *ngIf="favorites.length === 0 && !(loading$ | async)" class="alert alert-info border-0 rounded-3 shadow-sm">
       Vous n'avez pas encore ajouté d'offres à vos favoris.
       <a href="/jobs/search" class="alert-link">Rechercher des offres</a>
     </div>
 
-    <div class="row">
-      <div class="col-md-6 mb-3" *ngFor="let favorite of favorites">
-        <div class="card h-100 shadow-sm">
+    <div class="row g-3 g-md-4">
+      <div class="col-md-6" *ngFor="let favorite of favorites">
+        <article class="card job-card h-100">
           <div class="card-body">
-            <h5 class="card-title">{{ favorite.job.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ favorite.job.company.display_name }}</h6>
-            <p class="card-text">{{ favorite.job.description | slice:0:100 }}...</p>
-            <p class="card-text"><small class="text-muted">{{ favorite.job.location.display_name }}</small></p>
+            <header>
+              <h2 class="job-card-title">{{ favorite.job.title }}</h2>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="job-card-company">{{ favorite.job.company.display_name }}</span>
+              </div>
+            </header>
 
-            <div class="d-flex justify-content-between align-items-center mt-3">
+            <p class="job-card-description">
+              {{ favorite.job.description | slice:0:140 }}...
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mb-2">
+              <span class="pill pill-muted">
+                {{ favorite.job.location.display_name }}
+              </span>
+            </div>
+
+            <footer class="job-card-footer">
               <a [href]="favorite.job.redirect_url" target="_blank" class="btn btn-primary btn-sm">Voir l'offre</a>
+              <div class="text-end flex-grow-1 text-xs text-muted-soft">
+                Ajouté le {{ favorite.createdAt | date:'short' }}
+              </div>
               <button class="btn btn-outline-danger btn-sm" (click)="remove(favorite.id)">
                 <i class="bi bi-trash"></i> Retirer
               </button>
-            </div>
+            </footer>
           </div>
-          <div class="card-footer text-muted text-end">
-            <small>Ajouté le {{ favorite.createdAt | date:'short' }}</small>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </ng-container>

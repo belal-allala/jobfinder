@@ -1,47 +1,148 @@
-<div class="container mt-4">
-  <h2>Recherche d'Emploi</h2>
+<div class="app-page">
+  <header class="mb-4 mb-md-5">
+    <h1 class="page-header-title">Trouvez votre prochaine opportunité</h1>
+    <p class="page-header-subtitle">
+      Recherchez des offres adaptées à votre profil, en filtrant par mots-clés, localisation et critères clés.
+    </p>
+  </header>
 
-  <form [formGroup]="searchForm" class="mb-4">
-    <div class="row g-3">
-      <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Mots-clés (ex: Angular)" formControlName="what">
-      </div>
-      <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Localisation (ex: London)" formControlName="where">
-      </div>
-      <div class="col-md-2">
-        <select class="form-select" formControlName="country">
-          <option value="gb">Royaume-Uni</option>
-          <option value="us">États-Unis</option>
-          <option value="fr">France</option>
-          <option value="de">Allemagne</option>
-        </select>
-      </div>
-    </div>
-  </form>
-
-  <div *ngIf="jobs$ | async as jobs; else loading">
-    <div *ngIf="jobs.length === 0" class="alert alert-info">
-      Aucun résultat trouvé.
-    </div>
-
-    <div class="row">
-      <div class="col-md-6 mb-3" *ngFor="let job of jobs">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{ job.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ job.company.display_name }}</h6>
-            <p class="card-text">{{ job.description | slice:0:100 }}...</p>
-            <p class="card-text"><small class="text-muted">{{ job.location.display_name }}</small></p>
-            <a [href]="job.redirect_url" target="_blank" class="btn btn-primary btn-sm">Voir l'offre</a>
+  <section class="mb-4 mb-md-5">
+    <div class="card search-panel">
+      <div class="card-body">
+        <form [formGroup]="searchForm">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label search-label">Mots-clés</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ex : Développeur Angular, Frontend..."
+                formControlName="what"
+              >
+            </div>
+            <div class="col-md-3">
+              <label class="form-label search-label">Localisation</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ex : London, Paris..."
+                formControlName="where"
+              >
+            </div>
+            <div class="col-md-2">
+              <label class="form-label search-label">Pays</label>
+              <select class="form-select" formControlName="country">
+                <option value="gb">Royaume-Uni</option>
+                <option value="us">États-Unis</option>
+                <option value="fr">France</option>
+                <option value="de">Allemagne</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label search-label">Trier par</label>
+              <select class="form-select" formControlName="sort_by">
+                <option value="relevance">Pertinence</option>
+                <option value="date">Date (récent)</option>
+                <option value="salary">Salaire</option>
+              </select>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
+  </section>
+
+  <!-- Affichage du nombre total de résultats -->
+  <div *ngIf="totalCount$ | async as totalCount" class="mb-3 text-muted-soft text-sm">
+    Total des résultats : <strong>{{ totalCount }}</strong>
   </div>
 
+  <!-- On s'abonne aux favoris pour savoir lesquels sont déjà ajoutés -->
+  <ng-container *ngIf="favoriteJobIds$ | async as favoriteIds; else loadingFavorites">
+    <div *ngIf="jobs$ | async as jobs; else loading">
+      <div *ngIf="jobs.length === 0" class="alert alert-info border-0 rounded-3 shadow-sm">
+        Aucun résultat trouvé pour votre recherche. Essayez d’élargir vos filtres ou de modifier vos mots-clés.
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-md-6" *ngFor="let job of jobs">
+          <article class="card job-card h-100">
+            <div class="card-body">
+              <header class="job-card-header">
+                <h2 class="job-card-title">{{ job.title }}</h2>
+                <p class="job-card-company">{{ job.company.display_name }}</p>
+              </header>
+
+              <p class="job-card-description">
+                {{ job.description | slice:0:140 }}...
+              </p>
+
+              <div class="d-flex flex-wrap gap-2 mb-2">
+                <span class="pill pill-muted">
+                  {{ job.location.display_name }}
+                </span>
+              </div>
+
+              <div class="job-card-meta">
+                <span class="job-card-date">
+                  Publié le {{ job.created | date:'mediumDate' }}
+                </span>
+              </div>
+
+              <footer class="job-card-footer">
+                <a [routerLink]="['/job', job.id]" class="btn btn-primary btn-sm">
+                  Voir l'offre
+                </a>
+
+                <!-- Bouton conditionnel -->
+                <ng-container *ngIf="favoriteIds.has(job.id); else notFavorite">
+                  <button class="btn btn-outline-secondary btn-sm" disabled>
+                    <i class="bi bi-heart-fill me-1"></i> Déjà ajouté
+                  </button>
+                </ng-container>
+                <ng-template #notFavorite>
+                  <button class="btn btn-outline-danger btn-sm" (click)="addToFavorites(job)">
+                    <i class="bi bi-heart me-1"></i> Ajouter aux favoris
+                  </button>
+                </ng-template>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Pagination Simplifiée -->
+      <nav *ngIf="(totalCount$ | async) as totalCount" aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Précédent</button>
+          </li>
+
+          <li class="page-item disabled">
+            <span class="page-link">Page {{ currentPage }}</span>
+          </li>
+
+          <!-- On vérifie s'il y a une page suivante (totalCount > currentPage * resultsPerPage) -->
+          <li class="page-item" [class.disabled]="totalCount <= currentPage * resultsPerPage">
+            <button class="page-link" (click)="changePage(currentPage + 1)" [disabled]="totalCount <= currentPage * resultsPerPage">Suivant</button>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </ng-container>
+
+  <ng-template #loadingFavorites>
+    <div class="text-center my-5">
+      <div class="spinner-border text-secondary" role="status">
+        <span class="visually-hidden">Chargement des favoris...</span>
+      </div>
+      <p>Chargement des favoris...</p>
+    </div>
+  </ng-template>
+
   <ng-template #loading>
-    <div class="text-center">
+    <div class="text-center my-5">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Chargement...</span>
       </div>

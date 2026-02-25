@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styles: [`
-    .navbar-brand { font-weight: bold; font-size: 1.5rem; }
     .nav-link { cursor: pointer; }
   `]
 })

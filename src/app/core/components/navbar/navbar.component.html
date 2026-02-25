@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg app-navbar">
   <div class="container">
-    <a class="navbar-brand text-primary" routerLink="/">JobFinder</a>
+    <a class="navbar-brand" routerLink="/">JobFinder</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -9,26 +9,31 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+          <a class="nav-link" routerLink="/jobs/search" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Recherche</a>
         </li>
-        <!-- Liens visibles pour tout le monde ou selon rôle -->
+        <!-- Lien Favoris visible uniquement si connecté -->
+        <ng-container *ngIf="currentUser$ | async">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/favorites" routerLinkActive="active">Favoris</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/my-applications" routerLinkActive="active">Mes Candidatures</a>
+          </li>
+        </ng-container>
       </ul>
 
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-center">
         <!-- Utilisation du pipe async pour s'abonner au flux -->
-        <!-- "as user" permet d'utiliser la variable 'user' dans le template -->
         <ng-container *ngIf="currentUser$ | async as user; else guestTemplate">
 
           <!-- Template pour utilisateur connecté -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          <li class="nav-item me-3">
+            <span class="navbar-text fw-bold">
               {{ user.fullName }} <span class="badge bg-secondary ms-1">{{ user.role }}</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" routerLink="/profile">Mon Profil</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><button class="dropdown-item text-danger" (click)="logout()">Déconnexion</button></li>
-            </ul>
+            </span>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-danger btn-sm" (click)="logout()">Déconnexion</button>
           </li>
 
         </ng-container>

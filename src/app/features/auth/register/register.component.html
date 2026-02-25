@@ -1,0 +1,86 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="card shadow-sm" style="max-width: 400px; width: 100%;">
+    <div class="card-body p-4">
+      <h2 class="text-center mb-4 fw-bold">Créer un compte</h2>
+
+      <p class="text-center text-muted mb-4">
+        Ou <a routerLink="/auth/login" class="text-decoration-none">se connecter</a>
+      </p>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="fullName" class="form-label visually-hidden">Nom complet</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="Nom complet"
+            formControlName="fullName"
+            [class.is-invalid]="registerForm.get('fullName')?.invalid && (registerForm.get('fullName')?.dirty || registerForm.get('fullName')?.touched)"
+          >
+          <div class="invalid-feedback" *ngIf="registerForm.get('fullName')?.errors?.['required']">
+            Le nom est requis.
+          </div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('fullName')?.errors?.['minlength']">
+            Le nom doit contenir au moins 2 caractères.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label visually-hidden">Adresse email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Adresse email"
+            formControlName="email"
+            [class.is-invalid]="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)"
+          >
+          <div class="invalid-feedback" *ngIf="registerForm.get('email')?.errors?.['required']">
+            L'email est requis.
+          </div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('email')?.errors?.['email']">
+            Veuillez entrer un email valide.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label visually-hidden">Mot de passe</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Mot de passe"
+            formControlName="password"
+            [class.is-invalid]="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
+          >
+          <div class="invalid-feedback" *ngIf="registerForm.get('password')?.errors?.['required']">
+            Le mot de passe est requis.
+          </div>
+          <div class="invalid-feedback" *ngIf="registerForm.get('password')?.errors?.['minlength']">
+            Le mot de passe doit contenir au moins 6 caractères.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label visually-hidden">Rôle</label>
+          <select id="role" class="form-select" formControlName="role">
+            <option value="CANDIDATE">Candidat</option>
+            <option value="RECRUITER">Recruteur</option>
+          </select>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger text-center" role="alert">
+          {{ errorMessage }}
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid || isLoading">
+            <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+            {{ isLoading ? 'Inscription...' : 'S\'inscrire' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

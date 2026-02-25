@@ -1,0 +1,341 @@
+{
+  "users": [
+    {
+      "id": "5f03",
+      "fullName": "Belal Allala",
+      "email": "belalallala810@gmail.com",
+      "password": "belal123",
+      "role": "CANDIDATE"
+    }
+  ],
+  "favoritesOffers": [
+    {
+      "id": "9f79",
+      "userId": "5f03",
+      "jobId": "5621129010",
+      "job": {
+        "latitude": 51.404164,
+        "salary_max": 45000,
+        "salary_is_predicted": "0",
+        "id": "5621129010",
+        "company": {
+          "display_name": "Outcomes First Group",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "salary_min": 0,
+        "contract_type": "permanent",
+        "created": "2026-02-09T03:51:15Z",
+        "description": "At OFG, we work smarter so you can spend more time doing what makes you happy! Position: SEN Teacher – English Location: Baston House School, Bromley, Kent BR2 7AB Salary: Up to £45,000.00 per annum ( not pro rata ) Hours: 37.5 hours per week | Monday to Friday | 8.30am - 4.30pm Contract: Permanent, Term Time Only Start: May 2026 UK applicants only; no sponsorship available Baston House School is seeking an experienced and enthusiastic SEN Teacher – English to join our supportive and vibrant te…",
+        "location": {
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "area": [
+            "UK",
+            "London",
+            "South East London",
+            "Beckenham"
+          ],
+          "display_name": "Beckenham, South East London"
+        },
+        "title": "SEN Teacher – English",
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5621129010?se=juOJbMQI8RGEGcOCEvxBmg&utm_medium=api&utm_source=8f9a6305&v=AF41EFB7B81FA37D3C4D9891D43096AD3D26A895",
+        "longitude": -0.031467,
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTYyMTEyOTAxMCIsInMiOiJqdU9KYk1RSThSR0VHY09DRXZ4Qm1nIn0.JK746YMerKIbGm74T1wWh-6m4IHj5gRbAHsfPrZIOww",
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "category": {
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "label": "Teaching Jobs",
+          "tag": "teaching-jobs"
+        }
+      },
+      "createdAt": "2026-02-13T10:11:57.421Z"
+    },
+    {
+      "id": "2a36",
+      "userId": "5f03",
+      "jobId": "5614804702",
+      "job": {
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5614804702?se=OlSMiuEI8RGlAf7jlIiEuQ&utm_medium=api&utm_source=8f9a6305&v=BF22949819A311F21BFE739FCF8105BCF27F42DA",
+        "latitude": 51.230374,
+        "category": {
+          "tag": "teaching-jobs",
+          "label": "Teaching Jobs",
+          "__CLASS__": "Adzuna::API::Response::Category"
+        },
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "id": "5614804702",
+        "contract_type": "permanent",
+        "description": "Work Smarter. Live Better. Join the 4-Day Working Week! Position: Teacher Location: Wessex Lodge School, Frome, Somerset BA11 4LA Salary: From £39,000.00 per annum dependant on experience ( not pro rata ) Hours: 40 hours per week | Monday to Friday Contract: Permanent | Term Time Only Start: February 2026 UK applicants only. This role does not offer sponsorship. At Outcomes First Group, we believe in better work/life balance — and we’re putting wellbeing first. That’s why we’re proud to be part…",
+        "salary_min": 39000,
+        "company": {
+          "display_name": "Outcomes First Group",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "salary_is_predicted": "0",
+        "location": {
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "display_name": "Little Keyford, Frome",
+          "area": [
+            "UK",
+            "South West England",
+            "Somerset",
+            "Frome",
+            "Little Keyford"
+          ]
+        },
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiT2xTTWl1RUk4UkdsQWY3amxJaUV1USIsImkiOiI1NjE0ODA0NzAyIn0.xYWDTnDdu7dXoMwzG44xbWBcbu1wmDZ_sCYJnlVrz6E",
+        "created": "2026-02-04T23:16:35Z",
+        "title": "Teacher",
+        "longitude": -2.33014
+      },
+      "createdAt": "2026-02-13T13:40:22.840Z"
+    },
+    {
+      "id": "30be",
+      "userId": "5f03",
+      "jobId": "5584306944",
+      "job": {
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5584306944?se=REh_VG4R8RGJYuD5eCBoFw&utm_medium=api&utm_source=8f9a6305&v=5174475094178C7D8DE8EF1E20C058FCADD2BAD5",
+        "salary_is_predicted": "0",
+        "contract_type": "permanent",
+        "longitude": -1.985371,
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "category": {
+          "tag": "healthcare-nursing-jobs",
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "label": "Healthcare & Nursing Jobs"
+        },
+        "salary_min": 50000,
+        "created": "2026-01-14T17:21:35Z",
+        "company": {
+          "display_name": "Outcomes First Group",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "description": "Are you looking for an employer who can offer you opportunities for growth and development in your clinical career- All whilst working within a friendly multidisciplinary team in a rewarding education setting? Do you want to have opportunities to participate in research projects, special interest groups and form part of a wider clinical network that meets regularly for training & development? Do you want to have flexibility and be able to work creatively to deliver specialist assessments and in…",
+        "salary_max": 60000,
+        "id": "5584306944",
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU4NDMwNjk0NCIsInMiOiJSRWhfVkc0UjhSR0pZdUQ1ZUNCb0Z3In0.WNY5luep2GRM7s3UWqw-yX9nSJ_kWpu4pEF0KBpY-Bg",
+        "title": "Lead Clinician",
+        "location": {
+          "area": [
+            "UK",
+            "West Midlands",
+            "Walsall",
+            "Birchills"
+          ],
+          "display_name": "Birchills, Walsall",
+          "__CLASS__": "Adzuna::API::Response::Location"
+        },
+        "latitude": 52.59713
+      },
+      "createdAt": "2026-02-24T10:48:21.528Z"
+    },
+    {
+      "id": "8b7e",
+      "userId": "5f03",
+      "jobId": "5582272865",
+      "job": {
+        "salary_min": 25087,
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "location": {
+          "area": [
+            "UK",
+            "North West England",
+            "Cumbria",
+            "Milnthorpe",
+            "Ackenthwaite"
+          ],
+          "display_name": "Ackenthwaite, Milnthorpe",
+          "__CLASS__": "Adzuna::API::Response::Location"
+        },
+        "company": {
+          "display_name": "EE",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "salary_max": 25087,
+        "description": "Start Date - 23/03/2026 If you’re a natural when it comes to connecting with people – building relationships and understanding their needs – you could be a great fit for a Sales Advisor role with EE. At EE, we’re harnessing the power of technology to bring people together and change their lives for the better. Join our [ location ] Sales Team and you’ll play a part in this by talking to customers over the phone and helping them choose the right products and services. It’s a chance to make a mea…",
+        "created": "2026-01-13T14:06:14Z",
+        "category": {
+          "label": "Sales Jobs",
+          "tag": "sales-jobs",
+          "__CLASS__": "Adzuna::API::Response::Category"
+        },
+        "latitude": 54.225643,
+        "salary_is_predicted": "0",
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU4MjI3Mjg2NSIsInMiOiJjSktGWkVvUzhSRzBkWnY4SUd5aFlnIn0.YevHHbG6LBqXFpDtCZ6zbsfvHclgyrVf0094KFz9Uwk",
+        "longitude": -2.773415,
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5582272865?se=cJKFZEoS8RG0dZv8IGyhYg&utm_medium=api&utm_source=8f9a6305&v=32213BB09492E3BCFFEBF48C917F73DE9546A1F9",
+        "title": "Sales Advisor - Uncapped Commission",
+        "id": "5582272865"
+      },
+      "createdAt": "2026-02-25T13:03:41.278Z"
+    }
+  ],
+  "applications": [
+    {
+      "id": "cc4d",
+      "userId": "5f03",
+      "jobId": "5608388516",
+      "job": {
+        "title": "Speech and Language Therapist",
+        "company": {
+          "display_name": "Outcomes First Group",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "salary_max": 53200,
+        "id": "5608388516",
+        "contract_time": "full_time",
+        "location": {
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "display_name": "Cockerham, Lancaster",
+          "area": [
+            "UK",
+            "North West England",
+            "Lancashire",
+            "Lancaster",
+            "Cockerham"
+          ]
+        },
+        "contract_type": "permanent",
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "longitude": -2.808613,
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5608388516?se=ElGXjy8S8RGlcKDGVUd6HQ&utm_medium=api&utm_source=8f9a6305&v=63769CB0AD7ACB415C5BF3DF43251BB8E754819F",
+        "created": "2026-02-01T07:21:20Z",
+        "description": "Are you looking for an employer who can offer you opportunities for growth and development in your speech and language therapy career- All whilst working within a friendly multidisciplinary team in a rewarding education setting? Do you want to have opportunities to participate in research projects, special interest groups and form part of a wider speech and language therapy network that meets regularly for training & development? Do you want to have flexibility and be able to work creatively to…",
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiRWxHWGp5OFM4UkdsY0tER1ZVZDZIUSIsImkiOiI1NjA4Mzg4NTE2In0.0yVROxT3XPM7AHQ-u6ntQjZdJaDme7UqxFmxEHTTDhs",
+        "salary_is_predicted": "0",
+        "salary_min": 0,
+        "category": {
+          "tag": "teaching-jobs",
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "label": "Teaching Jobs"
+        },
+        "latitude": 53.950865
+      },
+      "appliedDate": "2026-02-25T09:51:31.778Z",
+      "status": "INTERVIEW"
+    },
+    {
+      "id": "3e74",
+      "userId": "5f03",
+      "jobId": "5537780053",
+      "job": {
+        "location": {
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "display_name": "Cranford, Hounslow",
+          "area": [
+            "UK",
+            "London",
+            "Hounslow",
+            "Cranford"
+          ]
+        },
+        "contract_time": "full_time",
+        "salary_max": 60000,
+        "id": "5537780053",
+        "company": {
+          "display_name": "RAC",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "title": "Roadside Technician",
+        "latitude": 51.466409,
+        "category": {
+          "label": "Engineering Jobs",
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "tag": "engineering-jobs"
+        },
+        "salary_min": 40000,
+        "description": "Join the RAC as a Roadside Technician Join the team that keeps the UK moving. As a Roadside Technician, you’ll receive: A market-competitive base salary of £40,000 (inclusive of London Weighting Allowance) and a realistic OTE of £60,000, with top-performers earning significantly more through bonuses and enhanced overtime rates. Start and finish on your driveway. Demand-led shifts averaging 40 hours per week, with optional overtime available. What you’ll need: • A Level 2 light vehicle maintenan…",
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoieHBFOW55OFM4UkdsY0tER1ZVZDZIUSIsImkiOiI1NTM3NzgwMDUzIn0.EEJb9Upp_MoFnKFyqkFkI4TDJod1EQQKW4mVYh1INic",
+        "salary_is_predicted": "0",
+        "created": "2025-12-11T15:07:00Z",
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5537780053?se=xpE9ny8S8RGlcKDGVUd6HQ&utm_medium=api&utm_source=8f9a6305&v=A079CF1AB48BA77837F47ADAEF70194380283C44",
+        "longitude": -0.361296,
+        "__CLASS__": "Adzuna::API::Response::Job"
+      },
+      "appliedDate": "2026-02-25T09:51:58.576Z",
+      "status": "INTERVIEW"
+    },
+    {
+      "id": "a879",
+      "userId": "5f03",
+      "jobId": "5582272854",
+      "job": {
+        "id": "5582272854",
+        "longitude": -2.799536,
+        "salary_is_predicted": "0",
+        "created": "2026-01-13T14:06:13Z",
+        "description": "Start Date - 23/03/2026 If you’re a natural when it comes to connecting with people – building relationships and understanding their needs – you could be a great fit for a Sales Advisor role with EE. At EE, we’re harnessing the power of technology to bring people together and change their lives for the better. Join our [ location ] Sales Team and you’ll play a part in this by talking to customers over the phone and helping them choose the right products and services. It’s a chance to make a mea…",
+        "salary_min": 25087,
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "title": "Sales Agent - Uncapped Commission",
+        "company": {
+          "display_name": "EE",
+          "__CLASS__": "Adzuna::API::Response::Company"
+        },
+        "location": {
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "display_name": "Moorgate, Lancaster",
+          "area": [
+            "UK",
+            "North West England",
+            "Lancashire",
+            "Lancaster",
+            "Moorgate"
+          ]
+        },
+        "category": {
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "label": "Sales Jobs",
+          "tag": "sales-jobs"
+        },
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5582272854?se=VggEBzIS8RGYmt8Srshc2w&utm_medium=api&utm_source=8f9a6305&v=09174C1A1A17E4A7300AB3DE3E0D44FAC549D074",
+        "latitude": 54.045802,
+        "salary_max": 25087,
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU4MjI3Mjg1NCIsInMiOiJWZ2dFQnpJUzhSR1ltdDhTcnNoYzJ3In0.hPSm7h0XsuIQ-rjneZNym2PlRiYHYpzQSTbo9QA6rT4"
+      },
+      "appliedDate": "2026-02-25T10:09:10.661Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "f0f7",
+      "userId": "5f03",
+      "jobId": "5582272865",
+      "job": {
+        "location": {
+          "display_name": "Ackenthwaite, Milnthorpe",
+          "__CLASS__": "Adzuna::API::Response::Location",
+          "area": [
+            "UK",
+            "North West England",
+            "Cumbria",
+            "Milnthorpe",
+            "Ackenthwaite"
+          ]
+        },
+        "longitude": -2.773415,
+        "salary_min": 25087,
+        "category": {
+          "__CLASS__": "Adzuna::API::Response::Category",
+          "label": "Sales Jobs",
+          "tag": "sales-jobs"
+        },
+        "id": "5582272865",
+        "__CLASS__": "Adzuna::API::Response::Job",
+        "redirect_url": "https://www.adzuna.co.uk/jobs/land/ad/5582272865?se=kmTUdkoS8RGnTsbhmiID6w&utm_medium=api&utm_source=8f9a6305&v=32213BB09492E3BCFFEBF48C917F73DE9546A1F9",
+        "salary_max": 25087,
+        "title": "Sales Advisor - Uncapped Commission",
+        "latitude": 54.225643,
+        "salary_is_predicted": "0",
+        "created": "2026-01-13T14:06:14Z",
+        "description": "Start Date - 23/03/2026 If you’re a natural when it comes to connecting with people – building relationships and understanding their needs – you could be a great fit for a Sales Advisor role with EE. At EE, we’re harnessing the power of technology to bring people together and change their lives for the better. Join our [ location ] Sales Team and you’ll play a part in this by talking to customers over the phone and helping them choose the right products and services. It’s a chance to make a mea…",
+        "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTU4MjI3Mjg2NSIsInMiOiJrbVRVZGtvUzhSR25Uc2JobWlJRDZ3In0.V4QyxQS4xRct1hbP895senrbcJdV_PijqwKXutMvqBw",
+        "company": {
+          "__CLASS__": "Adzuna::API::Response::Company",
+          "display_name": "EE"
+        }
+      },
+      "appliedDate": "2026-02-25T13:04:06.804Z",
+      "status": "INTERVIEW"
+    }
+  ]
+}

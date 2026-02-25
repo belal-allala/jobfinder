@@ -33,4 +33,5 @@ export interface JobSearchCriteria {
   country?: string; // Code pays (ex: "gb", "fr", "us")
   page?: number;
   results_per_page?: number;
+  sort_by?: 'date' | 'relevance' | 'salary'; // Ajout du tri
 }

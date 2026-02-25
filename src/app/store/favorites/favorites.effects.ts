@@ -9,6 +9,7 @@ export class FavoritesEffects {
   private actions$ = inject(Actions);
   private favoritesService = inject(FavoritesService);
 
+  // Charger les favoris au démarrage
   loadFavorites$ = createEffect(() => this.actions$.pipe(
     ofType(FavoritesActions.loadFavorites),
     mergeMap(() => this.favoritesService.getFavorites().pipe(
@@ -17,6 +18,7 @@ export class FavoritesEffects {
     ))
   ));
 
+  // Ajouter un favori
   addFavorite$ = createEffect(() => this.actions$.pipe(
     ofType(FavoritesActions.addFavorite),
     mergeMap(action => this.favoritesService.addFavorite(action.job).pipe(
@@ -25,6 +27,7 @@ export class FavoritesEffects {
     ))
   ));
 
+  // Supprimer un favori
   removeFavorite$ = createEffect(() => this.actions$.pipe(
     ofType(FavoritesActions.removeFavorite),
     mergeMap(action => this.favoritesService.removeFavorite(action.favoriteId).pipe(

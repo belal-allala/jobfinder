@@ -1,0 +1,41 @@
+<div class="container mt-5" *ngIf="job$ | async as job; else loading">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ job.title }}</h2>
+      <h4>{{ job.company.display_name }}</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Localisation :</strong> {{ job.location.display_name }}</p>
+      <p><strong>Description :</strong></p>
+      <p [innerHTML]="job.description"></p>
+
+      <!-- Section pour postuler -->
+      <div class="mt-4">
+        <button
+          class="btn btn-primary"
+          (click)="applyForJob()"
+          [disabled]="hasApplied">
+          {{ hasApplied ? 'Déjà postulé' : 'Postuler maintenant' }}
+        </button>
+
+        <!-- Message de succès -->
+        <div *ngIf="applicationSuccess" class="alert alert-success mt-3">
+          Votre candidature a été envoyée avec succès !
+        </div>
+
+        <!-- Message d'erreur -->
+        <div *ngIf="applicationError" class="alert alert-danger mt-3">
+          {{ applicationError }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="text-center mt-5">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Chargement...</span>
+    </div>
+  </div>
+</ng-template>
